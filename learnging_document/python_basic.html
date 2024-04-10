@@ -1,0 +1,1790 @@
+
+<!-- saved from url=(0049)https://pyt3h.github.io/backend/python_basic.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><link rel="stylesheet" href="./python_basic_files/default.min.css">
+<script src="./python_basic_files/highlight.min.js.download"></script>
+<link href="./python_basic_files/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+<link href="./python_basic_files/css" rel="stylesheet">
+<style>
+  body, table {
+    font-size: 15px;
+    font-family: "Noto Serif",serif;
+  }
+  h1 {
+    font-size: 36px;
+    font-family: sans-serif;
+    margin-bottom: 10px;
+  }
+  h2 {
+    font-size: 28px;
+    font-family: sans-serif;
+    margin-bottom: 10px;
+  }
+  h3 {
+    font-size: 20px;
+    font-family: sans-serif;
+    margin-bottom: 5px;
+  }
+
+  h4 {
+    font-size: 18px;
+    font-family: sans-serif;
+    margin-bottom: 5px;
+  }
+
+  .code {
+    font-family: monospace;
+  }
+
+  .bold {
+    font-weight: 700;
+  }
+</style>
+
+<script src="./python_basic_files/jquery.min.js.download"></script>
+<script>
+  $(document).ready(function(){
+    $("pre code").each(function(){
+        var html = $(this).html();
+        var pattern = html.match(/\s*\n[\t\s]*/);
+        $(this).html(html.replace(new RegExp(pattern, "g"),'\n'));
+    });
+    hljs.highlightAll();
+  })
+</script>
+
+</head><body><div class="container mt-3">
+  <h1><u>I. Cài đặt môi trường phát triển</u></h1>
+  <h2><u>1. Cài đặt Python</u></h2>
+  <p>Download và cài đặt Python từ <a href="https://www.python.org/downloads/">trang chủ </a></p>
+  <p><i>Lưu ý:</i> </p>
+  <ul>
+    <li>Không cài đặt Python bằng Micrsoft Store của Windows, sẽ gặp khó khăn trong việc phát triển với một số thư viện về sau</li>
+    <li>Ở màn hình cài đặt đầu tiên, chọn <b>Add Python 3.x to PATH</b>, tính năng này cần để làm việc với số chức nâng cao về sau</li>
+  </ul>
+  <div class="text-center my-4">
+    <img width="70%" src="./python_basic_files/1.png" alt="">
+  </div>
+  <div class="my-2"><b><u>Tạo mới và chạy thử chương trình đầu tiên</u></b></div>
+  <p>Từ menu start của Windows tìm ứng dụng <b>IDLE</b> và mở ứng dụng này</p>
+  <div class="text-center my-4">
+    <img width="70%" src="./python_basic_files/2.png" alt="">
+  </div>
+
+  <p class="pt-3">Khi ứng dụng IDLE khởi động xong, cửa số shell interactive (với con trỏ &gt;&gt;&gt; ) sẽ xuất hiện. Cửa số này cho 
+    phép nhập trực tiếp vào các dòng lệnh để thực hiện.
+  </p>
+  <div class="text-center my-4">
+    <img width="70%" src="./python_basic_files/3.png" alt="">
+  </div>
+  
+  <p class="pt-3">Để tạo và chạy một chương trình: Từ menu <b>File</b>, chọn <b>New File</b>, cửa sổ soạn thảo sẽ mở ra. 
+    </p>
+  <div class="text-center my-4">
+    <img width="70%" src="./python_basic_files/4.png" alt="">
+  </div>
+  
+  <p class="mt-3">Sau khi soạn thảo chương trình xong, từ menu <b>File</b> chọn <b>Save</b> để lưu lại chương trình trên ổ đĩa</p>
+  <div class="text-center my-4">
+    <img width="70%" src="./python_basic_files/5.png" alt="">
+  </div>
+
+  <p class="pt-3">Để chạy chương trình, từ menu <b>Run</b> chọn <b>Run Module (F5)</b>, chương trình sẽ được thực hiện,
+  và kết quả sẽ in ra cửa sổ shell.</p>
+  <div class="text-center my-4">
+    <img width="70%" src="./python_basic_files/6.png" alt="">
+  </div>
+
+  <h2><u>2. Cài đặt Python IDE</u></h2>
+  <p>IDLE cho phép soạn thảo và chạy chương trình Python nhưng không hỗ trợ nhiều các chức năng phát triển ứng dụng. Với các ứng dụng python có nhiều file, nên sử dụng IDE khác. Có thể sử dụng một trong các IDE:</p>
+  <ul>
+    <li>Pycharm</li>
+    <li>Visual Studio Code</li>
+    <li>Eclipse + Pydev</li>
+  </ul>
+  <p>
+    Với môi trường doanh nghiệp, Pycharm thường được sử dụng vì hỗ trợ Python tốt nhất. 
+    Với người học lập trình, Visual Studio Code phù hợp hơn vì nhẹ, không yêu cầu máy cấu hình cao,
+    trong khi vẫn hỗ trợ hầu như toàn bộ các tính năng cần thiết.
+  </p>
+  <div class="my-2"><b><u>Cài đặt Visual Studio Code để phát triển với Python</u></b></div>
+  <p>Tải và cài Visual Studio Code từ <a href="https://code.visualstudio.com/">trang chủ</a>.</p>
+  <p>
+    Sau khi cài đặt, khởi động Visual Studio Code. Trong lần chạy đầu tiên, cài đăt Extension cho Python như sau:
+    Click biểu tượng Extension (1) (dưới cùng thanh công cụ bên trái), trong phần tìm kiếm Extension (2) nhập Python,
+    danh sách các Extension hỗ trợ Python sẽ hiện lên ở Panel kết quả. Chọn Extension Python của Microsoft và cài đặt.
+  </p>
+  <div class="text-center my-4">
+    <img width="90%" src="./python_basic_files/7.png" alt="">
+  </div>
+
+  <br>
+  <h1><u>II. Kiến thức lập trình Python cơ bản</u></h1>
+  <h2><u>1. Biến số , kiểu dữ liệu</u></h2>
+  <p>Biến số được sử dụng để lưu trữ các giá trị trong quá trình tính toán của chương trình</p>
+  <p>Cách thức khai báo biến trong Python :</p>
+  <div class="offset-1">
+    <code class="language-python">
+      &nbsp;&nbsp;&nbsp;&nbsp;bienSo = &lt;gia_tri&gt;
+    </code>
+  </div>
+  <p class="pt-3">
+    Trong đó <code>bienSo</code> là tên của biến số cần khai báo, <code>&lt;gia_tri&gt;</code> là giá trị ban đầu chúng ta muốn đặt cho biến số. 
+    Giá trị này có thể là một hằng số hoặc một biểu thức của các biến số đã được khai báo.
+  </p>
+  <p>Ví dụ:</p>
+  <div class="offset-1">
+    <code class="language-python">
+      &nbsp;&nbsp;&nbsp;&nbsp;x = 1 <br>
+      &nbsp;&nbsp;&nbsp;&nbsp;y = 2 <br>
+      &nbsp;&nbsp;&nbsp;&nbsp;z = x + y
+    </code>
+  </div>
+  <p class="pt-3">Để xóa một biến khỏi bộ nhớ, có thể sử dụng lệnh <code>del</code> :</p>
+  <div class="offset-1">
+    <code class="language-python">
+      &nbsp;&nbsp;&nbsp;&nbsp;del x, y, z
+    </code>
+  </div>
+  <p class="pt-3">Mỗi biến số sau khi được khai báo sẽ chứa giá trị nhất định, gọi là dữ liệu.
+    Giá trị dữ liệu này sẽ thuộc vào một trong các kiểu dữ liệu mà Python hỗ trợ:
+  </p>
+  <ul>
+    <li>Kiểu dữ liệu số</li>
+    <li class="mt-2">Kiểu dữ liệu String</li>
+    <li class="mt-2">Kiểu dữ liệu List</li>
+    <li class="mt-2">Kiểu dữ liệu Tuple</li>
+    <li class="mt-2">Kiểu dữ liệu Set</li>
+    <li class="mt-2">Kiểu dữ liệu Dictionary</li>
+    <li class="mt-2">Kiểu dữ liệu Object</li>
+  </ul>
+
+  <br>
+  <h2><u>2. Vào ra dữ liệu</u></h2>
+  <h3><u>Đọc dữ liệu từ bàn phím</u></h3>
+  <p>Để lấy dữ liệu người dùng nhập vào từ bàn phím, Python sử dụng lệnh <code>input</code>: </p>
+  <div class="offset-1">
+    <code class="language-python">
+      &nbsp;&nbsp;&nbsp;&nbsp;giatri = input('Nhập giá trị cho biến : ')
+    </code>
+  </div>
+  <p class="pt-3">Ví dụ:</p>
+  <div class="offset-1">
+    <pre>      <code class="language-python hljs">
+<span class="hljs-comment"># Chương trình chào hỏi người sử dụng</span>
+ten = <span class="hljs-built_in">input</span>(<span class="hljs-string">'Mời bạn cho biết tên của bạn : '</span>)
+<span class="hljs-built_in">print</span>(<span class="hljs-string">'Xin chào '</span>, ten)
+      </code>
+    </pre>
+  </div>
+
+  <div class="offset-1">
+    <pre>      <code class="language-python hljs">
+<span class="hljs-comment"># Chương trình yêu cầu người dùng nhập vào 2 số từ bàn phím, sau đó in ra tổng 2 số</span>
+a = <span class="hljs-built_in">input</span>(<span class="hljs-string">'Số thứ nhất : '</span>)
+a = <span class="hljs-built_in">float</span>(a)
+
+b = <span class="hljs-built_in">input</span>(<span class="hljs-string">'Số thứ hai : '</span>)
+b = <span class="hljs-built_in">float</span>(b)
+
+<span class="hljs-built_in">print</span>(<span class="hljs-string">'Tổng của 2 số là : '</span>, a+b)
+      </code>
+    </pre>
+  </div>
+
+  <h3><u>In dữ liệu ra màn hình</u></h3>
+  <p>Lệnh <code>print</code> được sử dụng để in dữ liệu ra màn hình, cú pháp của lệnh này như sau:</p>
+  <div class="offset-1">
+    <code class="language-python">
+      &nbsp;&nbsp;&nbsp;&nbsp;print(&lt;danh sách giá trị ngăn cách nhau bởi dấu phảy&gt;)
+    </code>
+  </div>
+  <p class="pt-3">Ví dụ:</p>
+  <div class="offset-1">
+    <pre>      <code class="language-python hljs">
+<span class="hljs-comment"># Chương trình minh hoạ các in dữ liệu ra màn hình</span>
+x = <span class="hljs-number">1</span>
+y = <span class="hljs-number">2</span>
+z = x + y
+<span class="hljs-built_in">print</span>(x, <span class="hljs-string">'+'</span>, y, <span class="hljs-string">'='</span>, z)
+      </code>
+    </pre>
+  </div>
+
+  <h2><u>3. Các phép toán cơ bản</u></h2>
+  <h3><u>Phép toán số học</u></h3>
+  <ul>
+    <li><b>+</b> : Cộng</li>
+    <li><b>-</b> : Trừ</li>
+    <li><b>*</b> : Nhân</li>
+    <li><b>**</b> : Lũy thừa</li>
+    <li><b>/</b> : Chia</li>
+    <li><b>//</b> : Chia lấy phần nguyên</li>
+    <li><b>%</b> : Lấy số dư</li>
+  </ul>
+
+  <h3><u>Phép toán thu gọn</u></h3>
+  <ul>
+    <li><b>+=</b> : Lệnh <span class="code bold">a += b</span> tương đương với <span class="code bold">a = a + b</span></li>
+    <li><b>-=</b> : Lệnh <span class="code bold">a -= b</span> tương đương với <span class="code bold">a = a - b</span></li>
+    <li>...</li>
+  </ul>
+
+  <p>Ví dụ:</p>
+  <div class="col-10 offset-1 mt-3">
+    <pre><code class="language-python hljs">
+x = <span class="hljs-number">1</span>
+y = <span class="hljs-number">2</span>
+z = x + y
+t = x - y
+u = x * y
+v = x / y
+w = x % y
+<span class="hljs-built_in">print</span>(z, t, u, v, w)
+    </code></pre>
+  </div>
+
+  <br>
+  <h2><u>4. Cấu trúc rẽ nhánh if-else</u></h2>
+  <p>Cấu trúc rẽ nhánh <b>if-else</b> dùng để thực hiện một đoạn chương trình dựa trên một điều kiện logic (true/false).</p>
+  <p>Các dạng của cấu trúc <b>if-else</b>:</p>
+  <table class="table">
+    <thead>
+      <tr>
+        <th style="width: 25%;">Cú pháp</th>
+        <th style="width: 35%;">Giải thích</th>
+        <th style="width: 40%;">Ví dụ</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <code class="language-python">
+            <div class="my-2">if(&lt;dieu_kien&gt;):</div>
+            <div class="my-2">&nbsp;&nbsp;&nbsp;&lt;khoi_lenh&gt;</div>
+          </code>
+        </td>
+        <td>Nếu điều kiện đúng thì thực hiện khối lệnh</td>
+        <td>
+          <code class="language-python">
+            <div class="my-2">x = 1</div>
+            <div class="my-2">if x &gt; 0:</div>
+            <div class="my-2">&nbsp;&nbsp;&nbsp;x = x - 1</div>
+          </code>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <code class="language-python">
+            <div class="my-2">if &lt;dieu_kien&gt;:</div>
+            <div class="my-2">&nbsp;&nbsp;&nbsp;&lt;khoi_lenh_1&gt;</div>
+            <div class="my-2">else:</div>
+            <div class="my-2">&nbsp;&nbsp;&nbsp;&lt;khoi_lenh_2&gt;</div>
+          </code>
+        </td>
+        <td>Nếu điều kiện đúng thì thực hiện khối lệnh 1, nếu không thực hiện khối lệnh 2</td>
+        <td>
+          <code class="language-python">
+            <div class="my-2">x = -1</div>
+            <div class="my-2">if x &gt; 0:</div>
+            <div class="my-2">&nbsp;&nbsp;&nbsp;x = x - 1</div>
+            <div class="my-2">else:</div>
+            <div class="my-2">&nbsp;&nbsp;&nbsp;x = x + 1</div>
+          </code>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <code class="language-python">
+            <div class="my-2">if &lt;dieu_kien_1&gt; :</div>
+            <div class="my-2">&nbsp;&nbsp;&nbsp;&lt;khoi_lenh_1&gt;</div>
+            <div class="my-2">elif &lt;dieu_kien_2&gt; :</div>
+            <div class="my-2">&nbsp;&nbsp;&nbsp;&lt;khoi_lenh_2&gt;</div>
+            <div class="my-2">elif &lt;dieu_kien_3&gt;:</div>
+            <div class="my-2">&nbsp;&nbsp;&nbsp;&lt;khoi_lenh_3&gt;</div>
+            <div class="my-2">...</div>
+            <div class="my-2">else:</div>
+            <div class="my-2">&nbsp;&nbsp;&nbsp;&lt;khoi_lenh_n&gt;</div>
+          </code>
+        </td>
+        <td>
+          <p>Nếu điều kiện 1 đúng thì thực hiện khối lệnh 1</p>
+          <p>nếu không kiểm tra điều kiện 2, nếu đúng thực hiện khối lệnh 2,</p>
+          <p>nếu không tiếp tục kiểm tra điều kiện tiếp theo ...</p>
+          <p>Nếu không điều kiện nào đúng thì thực hiện khối lệnh cuối.</p>
+        </td>
+        <td>
+          <code class="language-python">
+            <div class="my-2">rating = 4.5</div>
+            <div class="my-2">if rating &lt; 2.5:</div>
+            <div class="my-2">&nbsp;&nbsp;&nbsp;print('Sản phẩm kém')</div>
+            <div class="my-2">elif rating &lt; 3.5:</div>
+            <div class="my-2">&nbsp;&nbsp;&nbsp;print('Sản phẩm trung bình')</div>
+            <div class="my-2">elif rating &lt; 4.0:</div>
+            <div class="my-2">&nbsp;&nbsp;&nbsp;print('Sản phẩm khá tốt')</div>
+            <div class="my-2">else:</div>
+            <div class="my-2">&nbsp;&nbsp;&nbsp;print('Sản phẩm tốt')</div>
+          </code>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <u><i>Lưu ý:</i></u>
+  <ul>
+    <li>Cuối dòng các lệnh if/elif/else là dấu hai chấm. Python sử dụng dấu hai chấm để bắt đầu một khối lệnh con</li>
+    <li class="mt-2">Các dòng của khối lệnh con bên dưới if/elif/else được viết lùi vào một số khoảng trắng (thường là 4 khoảng trắng hoặc 1 tab) so với dòng cha. Các dòng của một khối lệnh phải viết thẳng hàng với nhau.</li>
+  </ul>
+  
+  <h4><u>Các điều kiện logic dùng trong cú pháp if-else</u></h4>
+  <table class="table">
+    <thead>
+      <tr>
+        <th style="width: 25%;">Điều kiện</th>
+        <th style="width: 35%;">Ý nghĩa</th>
+        <th style="width: 40%;">Ví dụ</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><b>&gt;</b></td>
+        <td>So sánh lớn hơn</td>
+        <td>
+          <code class="language-python">
+            <div class="my-2">if(1 &gt; 2):</div>
+            <div class="my-2">&nbsp;&nbsp;&nbsp;print('1 &gt; 2')</div>
+          </code>
+        </td>
+      </tr>
+      <tr>
+        <td><b>&gt;=</b></td>
+        <td>So sánh lớn hơn hoặc bằng</td>
+        <td>
+          <code class="language-python">
+            <div class="my-2">if(1 &gt;= 2):</div>
+            <div class="my-2">&nbsp;&nbsp;&nbsp;print('1 &gt;= 2')</div>
+          </code>
+        </td>
+      </tr>
+      <tr>
+        <td><b>&lt;</b></td>
+        <td>So sánh nhỏ hơn</td>
+        <td>
+          <code class="language-python">
+            <div class="my-2">if(1 &lt; 2):</div>
+            <div class="my-2">&nbsp;&nbsp;&nbsp;print('1 &lt; 2')</div>
+            <div class="my-2"></div>
+            <div class="my-2">&nbsp;&nbsp;</div>
+          </code>
+        </td>
+      </tr>
+      <tr>
+        <td><b>&lt;=</b></td>
+        <td>So sánh nhỏ hơn hoặc bằng</td>
+        <td>
+          <code class="language-python">
+            <div class="my-2">if(1 &lt;= 2):</div>
+            <div class="my-2">&nbsp;&nbsp;&nbsp;print('1 &lt; 2')</div>
+          </code>
+        </td>
+      </tr>
+      <tr>
+        <td><b>==</b></td>
+        <td>So sánh bằng nhau</td>
+        <td>
+          <code class="language-python">
+            <div class="my-2">if(1 == 2):</div>
+            <div class="my-2">&nbsp;&nbsp;&nbsp;print('1 == 2')</div>
+          </code>
+        </td>
+      </tr>
+      <tr>
+        <td><b>!=</b></td>
+        <td>So sánh khác nhau</td>
+        <td>
+          <code class="language-python">
+            <div class="my-2">if(1 != 2):</div>
+            <div class="my-2">&nbsp;&nbsp;&nbsp;print('1 != 2')</div>
+          </code>
+        </td>
+      </tr>
+      <tr>
+        <td><b>and</b></td>
+        <td>Kết hợp 2 điều kiện theo logic <b>và</b></td>
+        <td>
+          <code class="language-python">
+            <div class="my-2">x = 1</div>
+            <div class="my-2">if x &gt; 0 and x &lt; 100:</div>
+            <div class="my-2">&nbsp;&nbsp;&nbsp;print('0 &lt; x &lt; 100')</div>
+          </code>
+        </td>
+      </tr>
+      <tr>
+        <td><b>or</b></td>
+        <td>Kết hợp 2 điều kiện theo logic <b>hoặc</b></td>
+        <td>
+          <code class="language-python">
+            <div class="my-2">x = 1</div>
+            <div class="my-2">if x &lt; 0 or x &gt; 100:</div>
+            <div class="my-2">&nbsp;&nbsp;&nbsp;print('x &lt; 0 hoặc x &gt; 100')</div>
+          </code>
+        </td>
+      </tr>
+      <tr>
+        <td><b>not</b></td>
+        <td>Phủ định một điều kiện</td>
+        <td>
+          <code class="language-python">
+            <div class="my-2">x = 1</div>
+            <div class="my-2">if not(x &lt; 0 or x &gt; 100):</div>
+            <div class="my-2">&nbsp;&nbsp;&nbsp;print('0 &lt;= x &lt;= 100')</div>
+          </code>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p>Một số ví dụ:</p>
+  <div class="offset-1">
+    <pre><code class="language-python hljs">
+<span class="hljs-comment"># Chương trình yêu cầu người dùng nhập vào 2 số và in ra số bé hơn</span>
+a = <span class="hljs-built_in">input</span>(<span class="hljs-string">'Số thứ nhất : '</span>)
+a = <span class="hljs-built_in">float</span>(a)
+
+b = <span class="hljs-built_in">input</span>(<span class="hljs-string">'Số thứ hai : '</span>)
+b = <span class="hljs-built_in">float</span>(b)
+
+<span class="hljs-keyword">if</span> a &lt; b:
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">'Số bé:'</span>, a)
+
+<span class="hljs-keyword">else</span>:
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">'Số bé:'</span>, b)
+    </code></pre>
+  </div>
+
+  <div class="offset-1">
+    <pre><code class="language-python hljs">
+<span class="hljs-comment"># Chương trình tính chỉ số BMI và đánh giá tình trạng thân hình của một người</span>
+height = <span class="hljs-built_in">input</span>(<span class="hljs-string">'Chiều cao (mét) : '</span>)
+height = <span class="hljs-built_in">float</span>(height)
+
+mass = <span class="hljs-built_in">input</span>(<span class="hljs-string">'Cân nặng (kg) : '</span>)
+mass = <span class="hljs-built_in">float</span>(mass)
+
+bmi = mass / (height * height)
+
+<span class="hljs-keyword">if</span> bmi &lt; <span class="hljs-number">16</span>:
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">'Thân hình gầy'</span>)
+
+<span class="hljs-keyword">elif</span> bmi &lt; <span class="hljs-number">18.5</span>:
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">'Thân hình hơi gầy'</span>)
+
+<span class="hljs-keyword">elif</span> bmi &lt; <span class="hljs-number">25</span>:
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">'Thân hình bình thường'</span>)
+
+<span class="hljs-keyword">elif</span> bmi &lt; <span class="hljs-number">30</span>:
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">'Thân hình hơi béo'</span>)
+
+<span class="hljs-keyword">else</span>:
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">'Thân hình béo'</span>)
+
+    </code></pre>
+  </div>
+
+  <br>
+  <h2><u>5. Cấu trúc lặp for</u></h2>
+  <p>Cấu trúc lặp for được dùng để thực hiện một vòng lặp với số lần lặp biết trước:</p>
+  <div class="offset-1">
+    <code class="language-python">
+      &nbsp;&nbsp;&nbsp;&nbsp;for &lt;bienLap&gt; in &lt;tapGiaTri&gt;: <br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;khoi_lenh&gt;
+    </code>
+  </div>
+
+  <p class="pt-3">Các cách thể hiện tập giá trị lặp:</p>
+  <table class="table">
+    <thead>
+      <tr>
+        <th style="width: 25%;">Cách thể hiện tập giá trị</th>
+        <th style="width: 35%;">Cấu trúc</th>
+        <th style="width: 40%;">Ví dụ</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <p>Liệt kê các thành phần của tập giá trị.</p> 
+          <p>Các phần từ viết cách nhau bởi dấu phảy và đặt trong cặp ngoặc vuông [].</p>
+        </td>
+        <td class="code">
+          [x1, x2, ...., xn]
+        </td>
+        <td class="code">
+          [1, 2, 3, 4, 5]
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <p>Dùng giải giá trị chặn cuối.</p>
+          <p>Giải giá trị này bắt đầu từ 0 và kết thúc trước giá trị chặn cuối.</p>
+        </td>
+        <td class="code">
+          range(&lt;end_value&gt;)
+        </td>
+        <td class="code">
+          range(5) ~ [0, 1, 2, 3, 4]
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <p>Dùng giải giá trị chặn đầu &amp; cuối.</p>
+          <p>Giải giá trị này bắt đầu từ giấ trị đầu và kết thúc trước giá trị chặn cuối.</p>
+        </td>
+        <td class="code">
+          range(&lt;start&gt;, &lt;end_value&gt;)
+        </td>
+        <td class="code">
+          range(1, 5) ~ [1, 2, 3, 4]
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <p>Dùng giải giá trị chặn đầu &amp; cuối kèm bước nhảy.</p>
+          <p>Giải giá trị này bắt đầu từ giấ trị đầu, kết thúc trước giá trị chặn cuối và tăng theo bước nhảy.</p>
+        </td>
+        <td class="code">
+          range(&lt;start&gt;, &lt;end_value&gt;, &lt;step&gt;)
+        </td>
+        <td class="code">
+          range(2, 10, 2) ~ [2, 4, 6, 8]
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <p>Một số ví dụ minh hoạ:</p>
+  <div class="offset-1">
+    <pre>      <code class="language-python hljs">
+<span class="hljs-comment"># Chương trình tính tổng các số từ 1 đến 100</span>
+S = <span class="hljs-number">0</span>
+<span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">1</span>, <span class="hljs-number">101</span>):
+    S += i
+
+<span class="hljs-built_in">print</span>(<span class="hljs-string">'S = '</span>, S)
+      </code>
+
+      <code class="language-python hljs">
+<span class="hljs-comment"># Chương trình in ra bảng cửu chương</span>
+<span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">2</span>, <span class="hljs-number">10</span>):
+    <span class="hljs-keyword">for</span> j <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">2</span>, <span class="hljs-number">10</span>):
+        <span class="hljs-built_in">print</span>(i, <span class="hljs-string">'*'</span>, j, <span class="hljs-string">'='</span>, i*j)
+    <span class="hljs-built_in">print</span>()
+      </code>
+    </pre>
+  </div>
+
+  <h2><u>6. Cấu trúc lặp while</u></h2>
+  <p>Cấu trúc lặp while được dùng để thực hiện một vòng lặp với số lần lặp không biết trước:</p>
+  <div class="offset-1">
+    <code class="language-python">
+      &nbsp;&nbsp;&nbsp;&nbsp;while &lt;dieukien&gt;:<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;khoi_lenh&gt;
+    </code>
+  </div>
+  <p>Một số ví dụ minh họa:</p>
+  <div class="offset-1">
+    <pre>      <code class="language-python hljs">
+<span class="hljs-comment"># Chương trình kiểm tra một số có phải số nguyên tố không</span>
+x = <span class="hljs-built_in">int</span>(<span class="hljs-built_in">input</span>(<span class="hljs-string">'x='</span>))
+i = <span class="hljs-number">2</span>
+<span class="hljs-keyword">while</span> i * i &lt;= x:
+    <span class="hljs-keyword">if</span> x % i == <span class="hljs-number">0</span>:
+        j = x // i
+        <span class="hljs-built_in">print</span>(x, <span class="hljs-string">'='</span>, i , <span class="hljs-string">'*'</span>, j)
+        <span class="hljs-keyword">break</span>
+    i += <span class="hljs-number">1</span>
+<span class="hljs-keyword">else</span>:
+  <span class="hljs-built_in">print</span>(x, <span class="hljs-string">' là số nguyên tố'</span>)
+      </code>
+      <code class="language-python hljs">
+<span class="hljs-comment"># Chương trình chuyển một số từ hệ thập phân sang hệ nhị phân</span>
+x = <span class="hljs-built_in">int</span>(<span class="hljs-built_in">input</span>(<span class="hljs-string">'x='</span>))
+s = <span class="hljs-string">''</span>
+
+<span class="hljs-keyword">while</span> x &gt; <span class="hljs-number">0</span>:
+    i = x % <span class="hljs-number">2</span>
+    s = <span class="hljs-built_in">str</span>(i) + s
+    x = <span class="hljs-built_in">int</span>(x/<span class="hljs-number">2</span>)
+
+<span class="hljs-built_in">print</span>(s)
+      </code>
+    </pre>
+  </div>
+  
+  <h3><u>Các lệnh break và continue</u></h3>
+  <p>Trong các vòng lặp <b>for</b>, <b>while</b> có thể sử dụng các lệnh <b>break</b> và <b>continue</b> với mục đích:</p>
+  <ul>
+    <li>Lệnh <b>break</b>: dùng để kết thúc sớm vòng lặp. Khi gặp lệnh này, 
+      chương trình sẽ dừng vòng lặp và chuyển sang lệnh tiếp theo phía dưới vòng lặp</li>
+    <li class="mt-2">Lệnh <b>continue</b>: dùng để bỏ qua một bước lặp. Khi gặp lệnh này,
+      chương trình sẽ bỏ qua phần còn lại của bước lặp đang thực hiện để chuyển qua bước tiếp theo.</li>
+  </ul>
+  <p>Ví dụ:</p>
+  <div class="offset-1">
+    <pre>      <code class="language-python hljs">
+<span class="hljs-comment"># Chương trình minh hoạ sử dụng lệnh break</span>
+<span class="hljs-comment"># Tìm số nhỏ nhất có 2 chữ số chia 2 dư 1, chia 3 dư 2, chia 4 dư 3</span>
+
+<span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">10</span>, <span class="hljs-number">100</span>):
+    <span class="hljs-keyword">if</span> i%<span class="hljs-number">2</span> == <span class="hljs-number">1</span> <span class="hljs-keyword">and</span> i%<span class="hljs-number">3</span> == <span class="hljs-number">2</span> <span class="hljs-keyword">and</span> i%<span class="hljs-number">4</span> == <span class="hljs-number">3</span>:
+        <span class="hljs-built_in">print</span>(i)
+        <span class="hljs-keyword">break</span>
+      </code>
+      <code class="language-python hljs">
+<span class="hljs-comment"># Chương trình minh hoạ sử dụng lệnh continue</span>
+<span class="hljs-comment"># Tìm tất cả các số có 2 chữ số chia 2 dư 1, chia 3 dư 2, chia 4 dư 3</span>
+
+<span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">10</span>, <span class="hljs-number">100</span>):
+    <span class="hljs-keyword">if</span> i%<span class="hljs-number">2</span> != <span class="hljs-number">1</span>:
+        <span class="hljs-keyword">continue</span>
+
+    <span class="hljs-keyword">if</span> i%<span class="hljs-number">3</span> != <span class="hljs-number">2</span>:
+        <span class="hljs-keyword">continue</span>
+      
+    <span class="hljs-keyword">if</span> i%<span class="hljs-number">4</span> != <span class="hljs-number">3</span>:
+        <span class="hljs-keyword">continue</span>
+
+    <span class="hljs-built_in">print</span>(i)
+      </code>
+    </pre>
+  </div>
+
+  <h2><u>7. Kiểu dữ liệu String</u></h2>
+  <p>Kiểu string dùng để lưu trữ các dữ liệu dạng văn bản. Trong Python dữ liệu string được đặt trong cặp nháy đơn ('') hoặc nháy kép ("")</p>
+  <p>Một số thao tác thông dụng trên dữ liệu string:</p>
+  <table class="table">
+    <thead>
+      <tr>
+        <th style="width:25%">Thao tác</th>
+        <th style="width:35%">Cú pháp</th>
+        <th style="width:40%">Ví dụ</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Lấy chiều dài</td>
+        <td class="code">len(&lt;st&gt;)</td>
+        <td>
+          <code class="language-python">
+            <div class="my-2">ho_ten = 'Nguyễn Văn A'</div>
+            <div class="my-2">print(len(ho_ten))</div>
+          </code>
+        </td>
+      </tr>
+      <tr>
+        <td>Lấy một kí tự của string</td>
+        <td class="code">&lt;st&gt;[&lt;index&gt;]</td>
+        <td>
+          <code class="language-python">
+            <div class="my-2">ho_ten = 'Nguyễn Văn A'</div>
+            <div class="my-2">print(ho_ten[0], ho_ten[7])</div>
+          </code>
+        </td>
+      </tr>
+      <tr>
+        <td>Lấy một đoạn của string</td>
+        <td>
+          <p class="code">&lt;st&gt;[&lt;start&gt;:&lt;end&gt;]</p>
+          <p><small><i>Lưu ý: nếu không truyền vào <b>start</b> thì lấy từ đầu string, nếu không truyền vào <b>end</b> thì lấy hết đến cuối string</i></small></p>
+        </td>
+        <td>
+          <code class="language-python">
+            <div class="my-2">date = '01/02/2022'</div>
+            <div class="my-2">print('day=', date[:2])</div>
+            <div class="my-2">print('month=', date[3:5])</div>
+            <div class="my-2">print('year=', date[6:])</div>
+          </code>
+        </td>
+      </tr>
+      <tr>
+        <td>Ghép nhiều string</td>
+        <td class="code">&lt;st1&gt; + &lt;st2&gt; + ... + &lt;st_n&gt;</td>
+        <td>
+          <code class="language-python">
+            <div class="my-2">ho = 'Nguyễn'</div>
+            <div class="my-2">ten_dem = 'Văn'</div>
+            <div class="my-2">ten = 'A'</div>
+            <div class="my-2">ho_ten = ho + ' ' + ten_dem + ' ' + ten</div>
+            <div class="my-2">print(ho_ten)</div>
+          </code>
+        </td>
+      </tr>
+      <tr>
+        <td>Ghép nhiều string sử dùng template</td>
+        <td>
+          <p class="code">f"{&lt;st1&gt;}{&lt;st2&gt;}...{&lt;st_n&gt;}"</p>
+        </td>
+        <td>
+          <code class="language-python">
+            <div class="my-2">ho = 'Nguyễn'</div>
+            <div class="my-2">ten_dem = 'Văn'</div>
+            <div class="my-2">ten = 'A'</div>
+            <div class="my-2">ho_ten = f"{ho} {ten_dem} {ten}"</div>
+            <div class="my-2">print(ho_ten)</div>
+          </code>
+        </td>
+      </tr>
+      <tr>
+        <td>Tách string thành từng phần theo từ phân cách (delimiter)</td>
+        <td class="code">&lt;st&gt;.split(&lt;delimiter&gt;)</td>
+        <td>
+          <code class="language-python">
+            <div class="my-2">st = 'Nguyễn-Văn-A'</div>
+            <div class="my-2">words = st.split('-')</div>
+            <div class="my-2">print(words)</div>
+          </code>
+        </td>
+      </tr>
+      <tr>
+        <td>Ghép mảng nhiều string bằng từ nối (delimiter)</td>
+        <td class="code">&lt;delimiter&gt;.join(&lt;st_array&gt;)</td>
+        <td>
+          <code class="language-python">
+            <div class="my-2">arr = ['Nguyễn', 'Văn', 'A']</div>
+            <div class="my-2">st = '-'.join(arr)</div>
+            <div class="my-2">print(st)</div>
+          </code>
+        </td>
+      </tr>
+      <tr>
+        <td>Kiểm tra string có chứa một string khác</td>
+        <td class="code">&lt;st2&gt; in &lt;st1&gt;</td>
+        <td>
+          <code class="language-python">
+            <div class="my-2">username = 'nguyen-van-a'</div>
+            <div class="my-2">if '-' in username:</div>
+            <div class="my-2">&nbsp;&nbsp;&nbsp;print('username không hợp lệ')</div>
+          </code>
+        </td>
+      </tr>
+      <tr>
+        <td>Tìm vị trí xuất hiện đầu tiên của một string trong một string khác</td>
+        <td>
+          <p class="code">&lt;st1&gt;.find(&lt;st2&gt;)</p>
+          <p><small><i>Lưu ý: nếu không tìm thấy thì kết quả trả về là -1</i></small></p>
+        </td>
+        <td>
+          <code class="language-python">
+            <div class="my-2">username = 'nguyen-van-a'</div>
+            <div class="my-2">pos = username.find('-')</div>
+            <div class="my-2">print(pos)</div>
+          </code>
+        </td>
+      </tr>
+      <tr>
+        <td>Tìm vị trí xuất hiện cuối cùng của một string trong một string khác</td>
+        <td>
+          <p class="code">&lt;st1&gt;.rfind(&lt;st2&gt;)</p>
+          <p><small><i>Lưu ý: nếu không tìm thấy thì kết quả trả về là -1</i></small></p>
+        </td>
+        <td>
+          <code class="language-python">
+            <div class="my-2">username = 'nguyen-van-a'</div>
+            <div class="my-2">pos = username.rfind('-')</div>
+            <div class="my-2">print(pos)</div>
+          </code>
+        </td>
+      </tr>
+      
+      <tr>
+        <td>Chuyển thành dạng viết hoa</td>
+        <td>
+          <p class="code">&lt;st&gt;.upper()</p>
+        </td>
+        <td>
+          <code class="language-python">
+            <div class="my-2">city = 'Hà Nội'</div>
+            <div class="my-2">print(city.upper())</div>
+          </code>
+        </td>
+      </tr>
+      <tr>
+        <td>Chuyển thành dạng viết thường</td>
+        <td>
+          <p class="code">&lt;st&gt;.lower()</p>
+        </td>
+        <td>
+          <code class="language-python">
+            <div class="my-2">language = 'Python'</div>
+            <div class="my-2">print(language.lower())</div>
+          </code>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p>Một số ví dụ:</p>
+  <div class="offset-1">
+    <pre>      <code class="language-python hljs">
+<span class="hljs-comment"># Cho một xâu chứa ngày tháng dạng d/m/y, in ra từng thành phần d, m, y</span>
+
+date_str = <span class="hljs-string">'1/2/2000'</span>
+arr = date_str.split(<span class="hljs-string">'/'</span>)
+
+<span class="hljs-keyword">if</span> <span class="hljs-built_in">len</span>(arr) == <span class="hljs-number">3</span>:
+    d = arr[<span class="hljs-number">0</span>]
+    m = arr[<span class="hljs-number">1</span>]
+    y = arr[<span class="hljs-number">2</span>]
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">f'Ngày <span class="hljs-subst">{d}</span> tháng <span class="hljs-subst">{m}</span> năm <span class="hljs-subst">{y}</span>'</span>)
+<span class="hljs-keyword">else</span>:
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">'Ngày tháng không đúng định dạng'</span>)
+
+      </code>
+      <code class="language-python hljs">
+<span class="hljs-comment"># Chương trình kiểm tra tính hợp lệ của mật khẩu</span>
+<span class="hljs-comment"># Mật khẩu hợp lệ nếu: có từ 6 kí tự trở lên, chứa ít nhất 1 chữ số, chứa ít nhất 1 chữ cái</span>
+password = <span class="hljs-built_in">input</span>(<span class="hljs-string">'Nhập mật khẩu : '</span>)
+
+<span class="hljs-keyword">if</span> <span class="hljs-built_in">len</span>(password) &lt; <span class="hljs-number">6</span>:
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">'Mật khẩu quá ngắn'</span>)
+    exit()
+
+chuaChuCai = <span class="hljs-literal">False</span>
+<span class="hljs-keyword">for</span> c <span class="hljs-keyword">in</span> password:
+    C = c.upper()
+    <span class="hljs-keyword">if</span> (C &gt;= <span class="hljs-string">'A'</span> <span class="hljs-keyword">and</span> C &lt;= <span class="hljs-string">'Z'</span>):
+        chuaChuCai = <span class="hljs-literal">True</span>
+        <span class="hljs-keyword">break</span>
+
+<span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> chuaChuCai:
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">'Mật khẩu cần chứa ít nhất một chữ cái (a-z/A-Z)'</span>)
+    exit()
+
+chuaChuSo = <span class="hljs-literal">False</span>
+<span class="hljs-keyword">for</span> c <span class="hljs-keyword">in</span> password:
+    <span class="hljs-keyword">if</span> c &gt;= <span class="hljs-string">'0'</span> <span class="hljs-keyword">and</span> c &lt;= <span class="hljs-string">'9'</span>:
+        chuaChuSo = <span class="hljs-literal">True</span>
+        <span class="hljs-keyword">break</span>
+
+<span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> chuaChuSo:
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">'Mật khẩu cần chứa ít nhất một chữ số (0-9)'</span>)
+    exit()
+
+<span class="hljs-built_in">print</span>(<span class="hljs-string">'Mật khẩu hợp lệ !'</span>)
+      </code>
+    </pre>
+  </div>
+
+  <h2><u>8.Kiểu dữ liệu List</u></h2>
+  <p>Kiểu List dùng để lưu trữ một dãy các phần tử (có thể cùng hoặc khác kiểu dữ liệu).
+    Trong Python dữ liệu List được đặt trong cặp ngoặc vuông [].
+  </p>
+  <p>Một số thao tác thông dụng trên dữ liệu List:</p>
+  <table class="table">
+    <thead>
+      <tr>
+        <th style="width:25%">Thao tác</th>
+        <th style="width:35%">Cú pháp</th>
+        <th style="width:40%">Ví dụ</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Lấy chiều dài</td>
+        <td class="code">len(&lt;lst&gt;)</td>
+        <td>
+          <code class="language-javascript">
+            <div class="my-2">lst = [1, 2, 3, 4, 5]</div>
+            <div class="my-2">print(len(lst))</div>
+          </code>
+        </td>
+      </tr>
+      <tr>
+        <td>Lấy một phần tử của list</td>
+        <td class="code">&lt;lst&gt;[&lt;index&gt;]</td>
+        <td>
+          <code class="language-javascript">
+            <div class="my-2">lst = [1, 2, 3, 4, 5]</div>
+            <div class="my-2">print(lst[0], lst[4])</div>
+          </code>
+        </td>
+      </tr>
+      <tr>
+        <td>Lấy một đoạn của list</td>
+        <td>
+          <p class="code">&lt;lst&gt;[&lt;start&gt;:&lt;end&gt;]</p>
+          <p><small><i>Lưu ý: nếu không truyền vào <b>start</b> thì lấy từ đầu list, nếu không truyền vào <b>end</b> thì lấy hết đến cuối list</i></small></p>
+        </td>
+        <td>
+          <code class="language-javascript">
+            <div class="my-2">lst = [1, 2, 3, 4, 5]</div>
+            <div class="my-2">print(lst[1: 3])</div>
+            <div class="my-2">print(lst[3:])</div>
+          </code>
+        </td>
+      </tr>
+      <tr>
+        <td>Thêm một phần tử vào cuối list</td>
+        <td class="code">&lt;lst&gt;.append(&lt;new_element&gt;)</td>
+        <td>
+          <code class="language-javascript">
+            <div class="my-2">lst = [1, 2, 3, 4, 5]</div>
+            <div class="my-2">lst.append(6)</div>
+            <div class="my-2">print(lst)</div>
+          </code>
+        </td>
+      </tr>
+      <tr>
+        <td>Lấy phần tử cuối ra khỏi list</td>
+        <td class="code">&lt;lst&gt;.pop()</td>
+        <td>
+          <code class="language-javascript">
+            <div class="my-2">lst = [1, 2, 3, 4, 5]</div>
+            <div class="my-2">last = lst.pop()</div>
+            <div class="my-2">print(lst, last)</div>
+          </code>
+        </td>
+      </tr>
+      <tr>
+        <td>Xoá một phần tử trong list</td>
+        <td class="code">del &lt;lst&gt;[&lt;index&gt;]</td>
+        <td>
+          <code class="language-javascript">
+            <div class="my-2">lst = [1, 2, 3, 4, 5]</div>
+            <div class="my-2">del lst[2]</div>
+            <div class="my-2">print(lst)</div>
+          </code>
+        </td>
+      </tr>
+      <tr>
+        <td>Kiểm tra list có chứa một phần tử</td>
+        <td class="code">&lt;element&gt; in &lt;lst&gt;</td>
+        <td>
+          <code class="language-javascript">
+            <div class="my-2">lst = [1, 2, 3, 4, 5]</div>
+            <div class="my-2">if 1 in lst:</div>
+            <div class="my-2">&nbsp;&nbsp;&nbsp;print('1 exists in list')</div>
+          </code>
+        </td>
+      </tr>
+      <tr>
+        <td>Tìm vị trí xuất hiện đầu tiên của một phần tử trong list</td>
+        <td>
+          <p class="code">&lt;lst&gt;.index(&lt;element&gt;)</p>
+          <p><small><i>Lưu ý: nếu không tìm thấy thì xảy ra ngoại lệ (exception)</i></small></p>
+        </td>
+        <td>
+          <code class="language-javascript">
+            <div class="my-2">lst = [1, 2, 3, 4, 5]</div>
+            <div class="my-2">pos = lst.index(2)</div>
+            <div class="my-2">print(pos)</div>
+          </code>
+        </td>
+      </tr>
+      <tr>
+        <td>Sắp xếp list</td>
+        <td>
+          <p class="code">sorted(&lt;lst&gt;[,reverse=True])</p>
+          <p><small><i>Hàm <b>sorted</b> trả về một list mới chứa các phần tử đã được sắp xếp, nhưng <b>không làm thay đổi</b> đến list cũ.</i></small></p>
+        </td>
+        <td>
+          <code class="language-javascript">
+            <div class="my-2">lst = [1, 3, 2, 4, 5]</div>
+            <div class="my-2">asc_lst = sorted(lst) # Sắp xếp tăng dần</div>
+            <div class="my-2">dsc_lst = sorted(lst, reverse=True) # Sắp xếp giảm dần</div>
+          </code>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p>Một số ví dụ:</p>
+  <div class="offset-1">
+    <pre>      <code class="language-python hljs">
+<span class="hljs-comment"># Tách một dãy số 2 dãy số: dãy chứa số lẻ và dãy chứa số chẵn </span>
+
+ds = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">5</span>, <span class="hljs-number">7</span>, <span class="hljs-number">8</span>, <span class="hljs-number">9</span>, <span class="hljs-number">10</span>, <span class="hljs-number">11</span>, <span class="hljs-number">15</span>]
+ds_le = []
+ds_chan = []
+
+<span class="hljs-keyword">for</span> x <span class="hljs-keyword">in</span> ds:
+    <span class="hljs-keyword">if</span> x%<span class="hljs-number">2</span> == <span class="hljs-number">0</span>:
+        ds_chan.append(x)
+    <span class="hljs-keyword">else</span>:
+        ds_le.append(x)
+
+<span class="hljs-built_in">print</span>(<span class="hljs-string">'Số chẵn:'</span>, ds_chan)
+<span class="hljs-built_in">print</span>(<span class="hljs-string">'Số lẻ:'</span>, ds_le)
+      </code>
+      <code class="language-python hljs">
+<span class="hljs-comment"># Cho một dãy số, tách dãy số thành các đoạn mỗi đoạn có độ dài không vượt quá N (cho trước)</span>
+lst = <span class="hljs-built_in">list</span>(<span class="hljs-built_in">range</span>(<span class="hljs-number">30</span>))   <span class="hljs-comment"># 0..&lt;30</span>
+N = <span class="hljs-number">4</span>
+chunks = []
+
+<span class="hljs-keyword">while</span> <span class="hljs-built_in">len</span>(lst) &gt; <span class="hljs-number">0</span>:
+    chunks.append(lst[:N])
+    lst = lst[N:]
+
+<span class="hljs-built_in">print</span>(<span class="hljs-string">'chunks='</span>, chunks)
+      </code>
+    </pre>
+  </div>
+
+  <h3><u>List Comprehension</u></h3>
+  <p>
+    <b>List Comprehension</b> là thao tác xử lý trên list được dùng <b>rất phổ biến</b> trong Python.
+    Về lí thuyết, List Comprehension tương đương với một vòng lặp <b>for</b> nhưng ngắn gọn hơn.
+  </p>
+
+  <p>Cú pháp List Comprehension:</p>
+  <div class="offset-1">
+    <code class="language-python">
+      <div>new_lst = [transform(var) <b>for</b> var <b>in</b> lst] # hoặc</div>
+      <div class="mt-2">new_lst = [transform(var) <b>for</b> var <b>in</b> lst <b>if</b> condition(var)]</div>
+    </code>
+  </div>
+  <div class="mt-3"><b><u>Giải thích:</u></b></div>
+  
+  <p class="mt-2">List Comprehension tạo ra một list mới từ một list đã có bằng cách biến đổi từng phần tử của list đã có 
+    qua phép biến đổi thành phần <i>transform</i>. Ngoài ra phía cuối của biểu thức Comprehension có thể
+    chỉ định điều kiện lọc <i>condition</i> để chỉ lấy ra những phần tử ở list ban đầu thoả mãn điều kiện này.
+  </p>
+  <p>Cú pháp List Comprehension tương đương với một vòng lặp for:</p>
+  
+  <div class="offset-1">
+    <code class="language-python">
+      <div class="mt-1">new_lst = []</div>
+      <div class="mt-1"><b>for</b> var <b>in</b> lst:</div>
+      <div class="mt-1">&nbsp;&nbsp;&nbsp;<b>if</b> condition(var):</div>
+      <div class="mt-1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;new_lst.<b>append</b>(transform(var))</div>
+    </code>
+  </div>
+  
+  <div class="mt-3"><b><u>Ứng dụng:</u></b></div>
+
+  <p class="mt-2">List Comprehension được dùng với 2 mục đích chính : <b>chuyển đổi</b> và <b>lọc</b> dữ liệu. Ví dụ:</p>
+
+  <div class="offset-1">
+    <pre>      <code class="language-python hljs">
+<span class="hljs-comment"># Dùng List Comprehension để chuyển đổi dữ liệu</span>
+<span class="hljs-comment"># Cho một dãy số, tính bình phương của các phần tử trong dãy số</span>
+
+lst = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>, <span class="hljs-number">6</span>, <span class="hljs-number">7</span>, <span class="hljs-number">8</span>]
+squares = [x*x <span class="hljs-keyword">for</span> x <span class="hljs-keyword">in</span> lst]
+<span class="hljs-built_in">print</span>(<span class="hljs-string">'squares='</span>, squares)
+      </code>
+      <code class="language-python hljs">
+<span class="hljs-comment"># Dùng List Comprehension để lọc dữ liệu</span>
+<span class="hljs-comment"># Cho một dãy số, tìm các số chẵn</span>
+
+lst = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>, <span class="hljs-number">6</span>, <span class="hljs-number">7</span>, <span class="hljs-number">8</span>]
+even_numbers = [x <span class="hljs-keyword">for</span> x <span class="hljs-keyword">in</span> lst <span class="hljs-keyword">if</span> x%<span class="hljs-number">2</span> == <span class="hljs-number">0</span>]
+<span class="hljs-built_in">print</span>(<span class="hljs-string">'even numbers:'</span>, even_numbers)
+      </code>
+      <code class="language-python hljs">
+<span class="hljs-comment"># Dùng List Comprehension để lọc+chuyển đổi dữ liệu</span>
+<span class="hljs-comment"># Cho một dãy số, tính bình phương các số chẵn</span>
+
+lst = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>, <span class="hljs-number">6</span>, <span class="hljs-number">7</span>, <span class="hljs-number">8</span>]
+even_squares = [x*x <span class="hljs-keyword">for</span> x <span class="hljs-keyword">in</span> lst <span class="hljs-keyword">if</span> x%<span class="hljs-number">2</span> == <span class="hljs-number">0</span>]
+<span class="hljs-built_in">print</span>(<span class="hljs-string">'even squares:'</span>, even_squares)
+      </code>
+    </pre>
+  </div>
+
+
+  <h2><u>9.Kiểu dữ liệu Tuple</u></h2>
+  <p>Kiểu Tuple được dùng chủ yếu để gộp các biến đơn lẻ thành một nhóm.
+    Trong Python dữ liệu Tuple được đặt trong cặp ngoặc vuông ().
+  </p>
+  <p>Hai thao tác chính với Tuple là gộp (pack) và tách (unpack):</p>
+  <div class="offset-1">
+    <pre>      <code class="language-python hljs">
+<span class="hljs-comment"># Gộp nhiều biến thành tuple</span>
+student_info = (<span class="hljs-string">'Nguyễn Văn A'</span>, <span class="hljs-number">2000</span>, <span class="hljs-string">'Hà Nội'</span>)
+
+<span class="hljs-comment"># Tách tuple thành các biến đơn lẻ</span>
+student_name, student_birth_year, student_address = student_info
+
+<span class="hljs-comment"># Dùng tuple để khai báo nhiều biến một lúc</span>
+student_name, student_birth_year, student_address = <span class="hljs-string">'Nguyễn Văn A'</span>, <span class="hljs-number">2000</span>, <span class="hljs-string">'Hà Nội'</span>
+      </code>
+    </pre>
+  </div>
+
+  <h2><u>9.Kiểu dữ liệu Dictionary</u></h2>
+  <p>Kiểu dữ liệu Dictionary dùng để chứa một bảng biến đổi 1-1 giữa 2 tập hợp :</p>
+  <ul>
+    <li>Tập nguồn (hay tập khóa (key))</li>
+    <li class="mt-2">Tập đích (hay tập giá trị (value))</li>
+  </ul>
+  <p>Mỗi phần tử của tập nguồn có một phần tử tương ứng ở tập đích.</p>
+  <p>Cú pháp khai báo dictionary:</p>
+  <div class="offset-1">
+    <pre>      <code class="language-python hljs">
+d = {
+    &lt;key1&gt; : &lt;value1&gt;,
+    &lt;key2&gt; : &lt;value2&gt;,
+    ...
+}
+</code>
+    </pre>
+  </div>
+
+  <p>Các cặp <b>key-value</b> được ngăn cách nhau bởi dấu phảy, giữa <b>key</b> và <b>value</b> trong một cặp ngăn cách nhau bởi dấu hai chấm.</p>
+  <p>Một trong những ứng dụng thường dùng của kiểu Dictionary là để thế hiện một đối tượng với nhiều trường dữ liệu, khi đó mỗi key là tên một trường
+    dữ liệu, value là giá trị của trường dữ liệu đó.
+  </p>
+
+  <p>Ví dụ:</p>
+
+  <div class="offset-1">
+    <pre>      <code class="language-python hljs">
+student_info = {
+    <span class="hljs-string">"name"</span>: <span class="hljs-string">"Nguyễn Văn A"</span>,
+    <span class="hljs-string">"birth_year"</span>: <span class="hljs-number">2000</span>,
+    <span class="hljs-string">"address"</span>: <span class="hljs-string">"Hà Nội"</span>
+}
+</code>
+    </pre>
+  </div>
+
+  <p>Một số thao tác trên kiểu dữ liệu <b>Dictionary</b>:</p>
+  <table class="table">
+    <thead>
+      <tr>
+        <th style="width:25%">Thao tác</th>
+        <th style="width:35%">Cú pháp</th>
+        <th style="width:40%">Ví dụ</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Lấy giá trị một trường</td>
+        <td>
+          <div class="my-2 code">&lt;dict&gt;[&lt;key&gt;]</div> hoặc
+          <div class="my-2 code">&lt;dict&gt;.get(&lt;key&gt;)</div>
+          <small>
+            Sự khác biệt giữa 2 cách lấy giá trị: Nếu <i>key</i> không tồn tại, cách lấy theo ngoặc vuông sẽ sinh ra ngoại lệ (exception),
+            cách lấy theo hàm <b>get</b> trả về None.
+          </small>
+        </td>
+        <td>
+          <code class="language-python">
+            <div class="my-2">student_info = {</div>
+            <div class="my-2">&nbsp;&nbsp; "name": "Nguyễn Văn A",</div>
+            <div class="my-2">&nbsp;&nbsp; "date-of-birth": '01/01/2000'</div>
+            <div class="my-2">}</div>
+            <div class="my-2">print(student_info["name"])</div>
+            <div class="my-2">print(student_info.get('date-of-birth'))</div>
+          </code>
+        </td>
+      </tr>
+      <tr>
+        <td>Thêm mới/cập nhật một trường dữ liệu</td>
+        <td>
+          <div class="my-2 code">&lt;dict&gt;[&lt;key&gt;] = value</div>
+        </td>
+        <td>
+          <code class="language-python">
+            <div class="my-2">student_info = {</div>
+            <div class="my-2">&nbsp;&nbsp; "name": "Nguyễn Văn A",</div>
+            <div class="my-2">&nbsp;&nbsp; "date-of-birth": '01/01/2000'</div>
+            <div class="my-2">}</div>
+            <div class="my-2">student_info["address"] = 'Hà Nội'</div>
+          </code>
+        </td>
+      </tr>
+      <tr>
+        <td>Lấy tập nguồn (key)</td>
+        <td>
+          <div class="my-2 code">&lt;dict&gt;.keys()</div>
+        </td>
+        <td>
+          <code class="language-python">
+            <div class="my-2">student_info = {</div>
+            <div class="my-2">&nbsp;&nbsp; "name": "Nguyễn Văn A",</div>
+            <div class="my-2">&nbsp;&nbsp; "date-of-birth": '01/01/2000'</div>
+            <div class="my-2">}</div>
+            <div class="my-2">print(student_info.keys())</div>
+          </code>
+        </td>
+      </tr>
+      <tr>
+        <td>Lấy tập đích (value)</td>
+        <td>
+          <div class="my-2 code">&lt;dict&gt;.values()</div>
+        </td>
+        <td>
+          <code class="language-python">
+            <div class="my-2">student_info = {</div>
+            <div class="my-2">&nbsp;&nbsp; "name": "Nguyễn Văn A",</div>
+            <div class="my-2">&nbsp;&nbsp; "date-of-birth": '01/01/2000'</div>
+            <div class="my-2">}</div>
+            <div class="my-2">print(student_info.values())</div>
+          </code>
+        </td>
+      </tr>
+      <tr>
+        <td>Lấy danh sách các cặp (key, value)</td>
+        <td>
+          <div class="my-2 code">&lt;dict&gt;.items()</div>
+        </td>
+        <td>
+          <code class="language-python">
+            <div class="my-2">student_info = {</div>
+            <div class="my-2">&nbsp;&nbsp; "name": "Nguyễn Văn A",</div>
+            <div class="my-2">&nbsp;&nbsp; "date-of-birth": '01/01/2000'</div>
+            <div class="my-2">}</div>
+            <div class="my-2">print(student_info.items())</div>
+          </code>
+        </td>
+      </tr>
+      <tr>
+        <td>Duyệt các trường của Dictionary</td>
+        <td>
+          <div class="my-2 code">for key, value in &lt;dict&gt;.items():</div>
+          <div class="my-2 code">&nbsp;&nbsp;//process key, value</div>
+        </td>
+        <td>
+          <code class="language-python">
+            <div class="my-2">student_info = {</div>
+            <div class="my-2">&nbsp;&nbsp; "name": "Nguyễn Văn A",</div>
+            <div class="my-2">&nbsp;&nbsp; "date-of-birth": '01/01/2000'</div>
+            <div class="my-2">}</div>
+            <div class="my-2">for key, value in student_info.items():</div>
+            <div class="my-2">&nbsp;&nbsp; print(key, ':', value)</div>
+          </code>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p>Một số ví dụ:</p>
+  <div class="offset-1">
+    <pre>      <code class="language-python hljs">
+<span class="hljs-comment"># Đếm số lần xuất hiện của các từ trong một đoạn văn bản</span>
+text = <span class="hljs-string">'Một năm có mười hai tháng, tháng hai có hai mươi tám ngày, các tháng còn lại có ba mươi hoặc ba mươi mốt ngày'</span>
+
+text = text.lower()
+<span class="hljs-keyword">for</span> c <span class="hljs-keyword">in</span> [<span class="hljs-string">'.'</span>, <span class="hljs-string">','</span> , <span class="hljs-string">':'</span>]:
+  text = text.replace(c, <span class="hljs-string">' '</span>)
+
+words_count = {}
+
+<span class="hljs-keyword">for</span> word <span class="hljs-keyword">in</span> text.split():
+  words_count[word] = words_count.get(word, <span class="hljs-number">0</span>) + <span class="hljs-number">1</span>
+
+<span class="hljs-keyword">for</span> word <span class="hljs-keyword">in</span> words_count:
+  <span class="hljs-built_in">print</span>(word , <span class="hljs-string">' : '</span>, words_count[word])
+      </code>
+      <code class="language-python hljs">
+<span class="hljs-comment"># Cho một bảng dữ liệu nhiệt độ từ 0-23h tại một địa điểm, in ra thời gian nhiệt độ cao nhất trong ngày</span>
+
+temp_table = [
+  {<span class="hljs-string">'hour'</span>: <span class="hljs-number">0</span>, <span class="hljs-string">'temp'</span>: <span class="hljs-number">20</span>},
+  {<span class="hljs-string">'hour'</span>: <span class="hljs-number">2</span>, <span class="hljs-string">'temp'</span>: <span class="hljs-number">20</span>},
+  {<span class="hljs-string">'hour'</span>: <span class="hljs-number">4</span>, <span class="hljs-string">'temp'</span>: <span class="hljs-number">19</span>},
+  {<span class="hljs-string">'hour'</span>: <span class="hljs-number">6</span>, <span class="hljs-string">'temp'</span>: <span class="hljs-number">20</span>},
+  {<span class="hljs-string">'hour'</span>: <span class="hljs-number">8</span>, <span class="hljs-string">'temp'</span>: <span class="hljs-number">21</span>},
+  {<span class="hljs-string">'hour'</span>: <span class="hljs-number">10</span>, <span class="hljs-string">'temp'</span>: <span class="hljs-number">23</span>},
+  {<span class="hljs-string">'hour'</span>: <span class="hljs-number">12</span>, <span class="hljs-string">'temp'</span>: <span class="hljs-number">24</span>},
+  {<span class="hljs-string">'hour'</span>: <span class="hljs-number">14</span>, <span class="hljs-string">'temp'</span>: <span class="hljs-number">25</span>},
+  {<span class="hljs-string">'hour'</span>: <span class="hljs-number">16</span>, <span class="hljs-string">'temp'</span>: <span class="hljs-number">24</span>},
+  {<span class="hljs-string">'hour'</span>: <span class="hljs-number">18</span>, <span class="hljs-string">'temp'</span>: <span class="hljs-number">22</span>},
+  {<span class="hljs-string">'hour'</span>: <span class="hljs-number">20</span>, <span class="hljs-string">'temp'</span>: <span class="hljs-number">21</span>},
+  {<span class="hljs-string">'hour'</span>: <span class="hljs-number">22</span>, <span class="hljs-string">'temp'</span>: <span class="hljs-number">19</span>},
+]
+
+temp_max = temp_table[<span class="hljs-number">0</span>][<span class="hljs-string">'temp'</span>]
+hour_max = <span class="hljs-number">0</span>
+
+<span class="hljs-keyword">for</span> record <span class="hljs-keyword">in</span> temp_table:
+    <span class="hljs-keyword">if</span> record[<span class="hljs-string">'temp'</span>] &gt; temp_max:
+        temp_max = record[<span class="hljs-string">'temp'</span>]
+        hour_max = record[<span class="hljs-string">'hour'</span>]
+
+<span class="hljs-built_in">print</span>(<span class="hljs-string">f'Nhiệt độ cao nhất : <span class="hljs-subst">{temp_max}</span> độ, lúc <span class="hljs-subst">{hour_max}</span>h'</span>)
+      </code>
+    </pre>
+  </div>
+
+  <h2><u>10. Kiểu dữ liệu Set</u></h2>
+  <p>Kiểu dữ liệu Set dùng để chứa các phần tử của một tập hợp, trong đó mỗi phần tử chỉ xuất hiện một lần duy nhất.
+    Trong Python dữ liệu Set được đặt trong cặp ngoặc nhọn {}
+  </p>
+  <p>So với kiểu List, kiểu Set có điểm khác biệt:</p>
+  <ul>
+    <li>Trong một Set không có 2 phần tử cùng giá trị.</li>
+    <li>Set không có thứ tự giữa các phần tử, do đó không truy nhập được phần tử theo chỉ số như List</li>
+  </ul>
+
+  <p>Một số thao tác trên kiểu dữ liệu <b>Set</b>:</p>
+  <table class="table">
+    <thead>
+      <tr>
+        <th style="width:25%">Thao tác</th>
+        <th style="width:35%">Cú pháp</th>
+        <th style="width:40%">Ví dụ</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Thêm một phần tử</td>
+        <td>
+          <div class="my-2 code">&lt;set&gt;.add(&lt;new_value&gt;)</div>
+        </td>
+        <td>
+          <code class="language-python">
+            <div class="my-2">s = {1, 2}</div>
+            <div class="my-2">s.add(3)</div>
+            <div class="my-2">print(s)</div>
+          </code>
+        </td>
+      </tr>
+      <tr>
+        <td>Xoá một phần tử</td>
+        <td>
+          <div class="my-2 code">&lt;set&gt;.remove(&lt;value&gt;)</div>
+        </td>
+        <td>
+          <code class="language-python">
+            <div class="my-2">s = {1, 2, 3}</div>
+            <div class="my-2">s.remove(2)</div>
+            <div class="my-2">print(s)</div>
+          </code>
+        </td>
+      </tr>
+      <tr>
+        <td>Kiểm tra set có chứa một phần tử</td>
+        <td>
+          <div class="my-2 code">&lt;value&gt; in &lt;set&gt;</div>
+        </td>
+        <td>
+          <code class="language-python">
+            <div class="my-2">s = {1, 2, 3}</div>
+            <div class="my-2">if 1 in s:</div>
+            <div class="my-2">&nbsp;&nbsp;&nbsp;print('1 exists in set')</div>
+          </code>
+        </td>
+      </tr>
+      <tr>
+        <td>Kiểm tra set không chứa một phần tử</td>
+        <td>
+          <div class="my-2 code">&lt;value&gt; not in &lt;set&gt;</div>
+        </td>
+        <td>
+          <code class="language-python">
+            <div class="my-2">s = {1, 2, 3}</div>
+            <div class="my-2">if 4 not in s:</div>
+            <div class="my-2">&nbsp;&nbsp;&nbsp;print('4 does not exist in set')</div>
+          </code>
+        </td>
+      </tr>
+      <tr>
+        <td>Lấy hợp của 2 set</td>
+        <td>
+          <div class="my-2 code">&lt;set1&gt;.union(&lt;set2&gt;)</div>
+        </td>
+        <td>
+          <code class="language-python">
+            <div class="my-2">s1 = {1, 2, 3}</div>
+            <div class="my-2">s2 = {3, 4, 5}</div>
+            <div class="my-2">print(s1.union(s2))   # {1, 2, 3, 4, 5}</div>
+          </code>
+        </td>
+      </tr>
+      <tr>
+        <td>Lấy giao của 2 set</td>
+        <td>
+          <div class="my-2 code">&lt;set1&gt;.intersection(&lt;set2&gt;)</div>
+        </td>
+        <td>
+          <code class="language-python">
+            <div class="my-2">s1 = {1, 2, 3}</div>
+            <div class="my-2">s2 = {3, 4, 5}</div>
+            <div class="my-2">print(s1.intersection(s2))  # {3}</div>
+          </code>
+        </td>
+      </tr>
+      <tr>
+        <td>Lấy phần khác nhau của 2 set</td>
+        <td>
+          <div class="my-2 code">&lt;set1&gt;.difference(&lt;set2&gt;)</div>
+        </td>
+        <td>
+          <code class="language-python">
+            <div class="my-2">s1 = {1, 2, 3}</div>
+            <div class="my-2">s2 = {3, 4, 5}</div>
+            <div class="my-2">print(s1.difference(s2))  # {1, 2}</div>
+          </code>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2><u>11. Hàm (Function)</u></h2>
+  
+  <p>Hàm (function) dùng để khai báo các chức năng được sử dụng lặp lại nhiều lần, 
+    hoặc để chia nhỏ chương trình thành các khối nhỏ để dễ phát triển/bảo trì.</p>
+
+  <p>Cú pháp khai báo hàm:</p>
+  <div class="offset-1">
+    <code class="language-javascript">
+      <div class="my-2">def &lt;ten_ham&gt;(&lt;danh_sach_bien&gt;):</div>
+      <div class="my-2">&nbsp;&nbsp;&nbsp;// Nội dung thân hàm</div>
+      <div class="my-2">&nbsp;&nbsp;&nbsp;return &lt;ket_qua&gt;</div>
+    </code>
+  </div>
+
+  <p class="mt-3">Trong đó:</p>
+  <ul>
+    <li><span class="code">&lt;ten_ham&gt;</span> : Tên hàm</li>
+    <li class="mt-2">
+      <span class="code">&lt;danh_sach_bien&gt;</span> : 
+      Danh sách các biến đầu vào của hàm, giữa các biến ngăn cách nhau bởi dấu phảy
+      
+    </li>
+    <li class="mt-2">
+      <span class="code">&lt;ket_qua&gt;</span> : Kết quả trả về sau khi xử lý.
+    </li>
+  </ul>
+
+  <p>Ví dụ:</p>
+  <div class="offset-1">
+    <pre><code class="language-python hljs">
+<span class="hljs-comment"># Hàm lấy số lớn nhất trong 2 số</span>
+<span class="hljs-keyword">def</span> <span class="hljs-title function_">max_2_number</span>(<span class="hljs-params">a, b</span>):
+    <span class="hljs-keyword">if</span>(a &gt; b):
+        <span class="hljs-keyword">return</span> a
+    <span class="hljs-keyword">else</span>:
+        <span class="hljs-keyword">return</span> b
+
+<span class="hljs-comment"># Gọi hàm trong chương trình chính</span>
+<span class="hljs-built_in">print</span>(max_2_number(<span class="hljs-number">2</span>, <span class="hljs-number">3</span>))
+
+<span class="hljs-comment"># Hàm tính tổng một dãy số</span>
+<span class="hljs-keyword">def</span> <span class="hljs-title function_">arr_sum</span>(<span class="hljs-params">arr</span>):
+    s = <span class="hljs-number">0</span>
+    <span class="hljs-keyword">for</span> x <span class="hljs-keyword">in</span> arr: s += x
+    <span class="hljs-keyword">return</span> s
+
+<span class="hljs-comment"># Gọi hàm trong chương trình chính</span>
+<span class="hljs-built_in">print</span>(arr_sum([<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>]))
+    </code></pre>
+  </div>
+
+  <h3><u>Hàm trả về nhiều giá trị:</u></h3>
+  <p>Để trả về nhiều giá trị trong hàm, sử dụng tuple để gộp các giá trị thành một nhóm:</p>
+  <div class="offset-1">
+    <pre><code class="language-python hljs">
+<span class="hljs-comment"># Hàm sắp xếp 2 số</span>
+<span class="hljs-keyword">def</span> <span class="hljs-title function_">sort_2_number</span>(<span class="hljs-params">a, b</span>):
+    <span class="hljs-keyword">if</span> a &lt; b:
+        <span class="hljs-keyword">return</span> a, b
+    <span class="hljs-keyword">else</span>:
+        <span class="hljs-keyword">return</span> b, a
+    </code></pre>
+  </div>
+
+  <h3><u>Giá trị mặc định của hàm:</u></h3>
+  <p>Khi khai báo hàm ,có thể gắn giá trị mặc định cho một số tham số đầu vào, khi gọi hàm, nếu tham số nào không
+    được truyền vào thì nó sẽ được nhận giá trị mặc định (nếu có). Ví dụ:
+  </p>
+  <div class="offset-1">
+    <pre><code class="language-python hljs">
+<span class="hljs-comment"># Hàm in ra địa chỉ từ các thông tin thành phần</span>
+<span class="hljs-keyword">def</span> <span class="hljs-title function_">print_address</span>(<span class="hljs-params">street, city, country=<span class="hljs-string">'Việt Nam'</span></span>):
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">f'<span class="hljs-subst">{street}</span>, <span class="hljs-subst">{city}</span>, <span class="hljs-subst">{country}</span>'</span>)
+
+print_address(<span class="hljs-string">'123 Cầu Giấy'</span>, <span class="hljs-string">'Hà Nội'</span>)  <span class="hljs-comment"># no 'country' sent into function</span>
+    </code></pre>
+  </div>
+
+  <h2><u>12. Module</u></h2>
+  <p>Khi xây dựng một chương trình lớn, thông thường các chức năng sẽ được chia nhỏ thành các module để việc phát triển và bảo trì được dễ dàng.</p>
+  <p>Ví dụ: Tạo 2 file trong một thư mục với tên <b>lib.py</b> và <b>main.py</b>.
+    File <b>lib.py</b> chứa một số hàm thư viện, file <b>main.py</b> là chương trình chính:
+  </p>
+  <div class="offset-1">
+    <pre>      <code class="language-python hljs">
+<span class="hljs-comment"># lib.py</span>
+<span class="hljs-keyword">def</span> <span class="hljs-title function_">sum_2_number</span>(<span class="hljs-params">a, b</span>):
+    <span class="hljs-keyword">return</span> a + b
+      </code>
+      <code class="language-python hljs">
+<span class="hljs-comment"># main.py</span>
+<span class="hljs-keyword">import</span> lib
+<span class="hljs-built_in">print</span>(lib.sum_2_number(<span class="hljs-number">2</span>, <span class="hljs-number">3</span>))
+      </code>
+    </pre>
+  </div>
+
+  <p>Trong file <b>main.py</b> lệnh <b>import lib</b> được dùng để truy xuất đến các chức năng được khai báo
+    trong file <b>lib.py</b>. Sau khai báo import này, trong thân chương trình <b>main.py</b> có thể gọi 
+    đến các hàm đã khai báo trong <b>lib.py</b> bằng cách gắn tiến tố <b>lib.</b> trước tên các hàm:
+  </p>
+  <div class="offset-1">
+    <code class="language-python">
+      &nbsp;&nbsp;&nbsp;&nbsp;print(lib.sum_2_number(2, 3))
+    </code>
+  </div>
+
+  <p class="pt-3">Ngoài cách trên, có thể sử dụng hàm của các module theo cú pháp:</p>
+
+  <div class="offset-1">
+    <code class="language-python">
+      &nbsp;&nbsp;&nbsp;&nbsp;from &lt;module&gt; import &lt;function&gt;
+    </code>
+  </div>
+
+  <p class="pt-3">Khi đó trong chương trình sử dụng module, không cần viết tiền tố tên module trước tên hàm nữa. Ví dụ:</p>
+  
+  <div class="offset-1">
+    <pre>      <code class="language-python hljs">
+<span class="hljs-comment"># lib.py</span>
+<span class="hljs-keyword">def</span> <span class="hljs-title function_">sum_2_number</span>(<span class="hljs-params">a, b</span>):
+    <span class="hljs-keyword">return</span> a + b
+      </code>
+      <code class="language-python hljs">
+<span class="hljs-comment"># main.py</span>
+<span class="hljs-keyword">from</span> lib <span class="hljs-keyword">import</span> sum_2_number
+<span class="hljs-built_in">print</span>(sum_2_number(<span class="hljs-number">2</span>, <span class="hljs-number">3</span>))
+      </code>
+    </pre>
+  </div>
+
+  <h2><u>13. File I/O</u></h2>
+  <p>Các file lưu dữ liệu lâu dài trên ổ đĩa. Hai thao tác chính làm việc với file là đọc &amp; ghi dữ liệu</p>
+  <h3><u>Mở file</u></h3>
+  <p>Cú pháp lệnh mở file trong Python:</p>
+
+  <div class="offset-1">
+    <code class="language-python">
+      &nbsp;&nbsp;&nbsp;&nbsp;&lt;file_handle&gt; = open(&lt;file_name&gt;, &lt;mode&gt;, encoding=&lt;encoding&gt;)
+    </code>
+  </div>
+
+  <p class="pt-3">Trong đó:</p>
+  <ul>
+    <li><b>&lt;file_name&gt;</b>: tên file cần mở</li>
+    <li class="mt-2">
+      <b>&lt;mode&gt;</b>: chế độ mở file:
+      <ul>
+        <li><b>'r'</b> (mặc định): mở file để đọc</li>
+        <li><b>'w'</b>: mở file để ghi mới, nếu file đã tồn tại thì xoá file cũ, tạo file mới </li>
+        <li><b>'a'</b>: mở file để ghi bổ sung, nếu file đã tồn tại thì ghi tiếp vào cuối file</li>
+        <li><b>'rb'</b> : mở file để đọc theo dạng nhị phân (binary)</li>
+        <li><b>'wb'</b>: mở file để ghi mới theo dạng nhị phân</li>
+        <li><b>'ab'</b>: mở file để ghi bổ sung theo dạng nhị phân</li>
+      </ul>
+    </li>
+    <li class="mt-2"><b>&lt;encoding&gt;</b>: Chế độ mã hoá văn bản khi đọc/ghi file text, thường sử dụng <b>"utf-8"</b>.</li>
+    <li><b>&lt;file_handle&gt;</b>: thẻ điều khiển trả về, sử dụng để thực hiện các thao tác đọc/ghi file về sau</li>
+  </ul>
+
+  <h3><u>Đọc file</u></h3>
+  <p>- Đọc toàn bộ nội dung file: sử dụng hàm <b>read</b> để nhận về toàn bộ nội dung của file:</p>
+
+  <div class="offset-1">
+    <code class="language-python">
+      &nbsp;&nbsp;&nbsp;&nbsp;data = &lt;file_handle&gt;.read()
+    </code>
+  </div>
+
+  <p class="pt-2">&nbsp;&nbsp;
+    Nếu file được mở theo chế độ văn bản, dữ liệu trả về có dạng <b>string</b>, nếu file  được mở theo chế độ nhị phân,
+    dữ liệu trả về có dạng <b>bytes</b>
+  </p>
+
+  <p>- Đọc file và tách thành từng dòng (chỉ với file văn bản): sử dụng hàm <b>readlines</b> để nhận về nội dung của file dưới dạng một danh sách các dòng văn bản:</p>
+
+  <div class="offset-1">
+    <code class="language-python">
+      &nbsp;&nbsp;&nbsp;&nbsp;lines = &lt;file_handle&gt;.readlines()
+    </code>
+  </div>
+
+  <p class="pt-3">- Đọc từng dòng một của file (chỉ với file văn bản): sử dụng vòng lặp <b>for</b> trên chính thẻ điều khiển file:</p>
+
+  <div class="offset-1">
+    <code class="language-python">
+      &nbsp;&nbsp;&nbsp;&nbsp;for line in &lt;file_handle&gt;: <br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# process line
+    </code>
+  </div>
+
+  <h3 class="mt-3"><u>Ghi file</u></h3>
+  <p>- Để ghi dữ liệu vào file, sử dụng hàm <b>write</b>:</p>
+
+  <div class="offset-1">
+    <code class="language-python">
+      &nbsp;&nbsp;&nbsp;&nbsp;&lt;file_handle&gt;.write(data)
+    </code>
+  </div>
+
+  <p class="pt-2">&nbsp;&nbsp;Nếu file được mở theo chế độ văn bản, dữ liệu ghi vào cần có kiểu là <b>string</b>, nếu file  được mở theo chế độ nhị phân,
+    dữ liệu ghi vào cần có kiểu là <b>bytes</b>
+  </p>
+
+  <h3><u>Đóng file</u></h3>
+  <p>Sau khi đọc/ghi file xong, cần đóng file để tránh mất mát dữ liệu:</p>
+
+  <div class="offset-1">
+    <code class="language-python">
+      &nbsp;&nbsp;&nbsp;&nbsp;&lt;file_handle&gt;.close()
+    </code>
+  </div>
+
+  <p class="pt-3">Một số ví dụ:</p>
+
+  <div class="offset-1">
+    <pre>      <code class="language-python hljs">
+<span class="hljs-comment"># Đọc vào một file văn bản, tạo ra một file văn bản mới bằng cách bỏ đi các dòng trống.</span>
+infile = <span class="hljs-built_in">open</span>(<span class="hljs-string">'input.txt'</span>, encoding=<span class="hljs-string">'utf-8'</span>)
+outfile = <span class="hljs-built_in">open</span>(<span class="hljs-string">'output.txt'</span>, <span class="hljs-string">'w'</span>, encoding=<span class="hljs-string">'utf-8'</span>)
+
+<span class="hljs-keyword">for</span> line <span class="hljs-keyword">in</span> infile:
+    <span class="hljs-keyword">if</span> line.strip() != <span class="hljs-string">''</span>:
+        outfile.write(line)
+
+infile.close()
+outfile.close()
+      </code>
+      <code class="language-python hljs">
+<span class="hljs-comment"># Đọc vào một file văn bản, đếm số lần xuất hiện của các từ trong file</span>
+words_count = {}
+
+f = <span class="hljs-built_in">open</span>(<span class="hljs-string">'input.txt'</span>, encoding=<span class="hljs-string">'utf-8'</span>)
+
+<span class="hljs-keyword">for</span> line <span class="hljs-keyword">in</span> f.readlines():
+    line = line.strip().lower()
+    <span class="hljs-keyword">for</span> c <span class="hljs-keyword">in</span> [<span class="hljs-string">'.'</span>, <span class="hljs-string">','</span> , <span class="hljs-string">':'</span>]:
+        line = line.replace(c, <span class="hljs-string">' '</span>)
+
+    <span class="hljs-keyword">for</span> word <span class="hljs-keyword">in</span> line.split():
+        words_count[word] = words_count.get(word, <span class="hljs-number">0</span>) + <span class="hljs-number">1</span>
+
+<span class="hljs-keyword">for</span> word <span class="hljs-keyword">in</span> words_count:
+    <span class="hljs-built_in">print</span>(word , <span class="hljs-string">' : '</span>, words_count[word])
+      </code>
+    </pre>
+  </div>
+
+  <h2><u>14. Dữ liệu kiểu Date/DateTime</u></h2>
+  <p>Dữ liệu kiểu Date &amp; Time được cung cấp bởi thư viện <b>datetime</b> của hệ thống:</p>
+  <p>Tạo mới dữ liệu date/datetime:</p>
+
+  <div class="offset-1">
+    <code class="language-python">
+      <div class="my-2 offset-1">from datetime import date, datetime</div>
+      <div class="my-2 offset-1">&lt;date&gt; = date(&lt;year&gt;, &lt;month&gt;, &lt;day&gt;)</div>
+      <div class="my-2 offset-1">&lt;datetime&gt; = datetime(&lt;year&gt;, &lt;month&gt;, &lt;day&gt;, &lt;hour&gt;, &lt;minute&gt;, &lt;second&gt;)</div>
+    </code>
+  </div>
+
+  <p>Ví dụ:</p>
+  <div class="offset-1">
+    <pre>      <code class="language-python hljs">
+<span class="hljs-keyword">from</span> datetime <span class="hljs-keyword">import</span> date, datetime
+
+d = date(<span class="hljs-number">2022</span>,<span class="hljs-number">1</span>,<span class="hljs-number">1</span>)                  <span class="hljs-comment"># 01/01/2022</span>
+dt = datetime(<span class="hljs-number">2022</span>,<span class="hljs-number">2</span>,<span class="hljs-number">1</span>,<span class="hljs-number">23</span>,<span class="hljs-number">59</span>,<span class="hljs-number">59</span>)    <span class="hljs-comment"># 23:59:59 01/02/2022</span>
+      </code>
+    </pre>
+  </div>
+
+  <p>Lấy ngày/giờ hiện tại:</p>
+  <div class="offset-1">
+    <pre>      <code class="language-python hljs">
+<span class="hljs-keyword">from</span> datetime <span class="hljs-keyword">import</span> date, datetime
+
+d = date.today()          <span class="hljs-comment"># today</span>
+dt = datetime.now()       <span class="hljs-comment"># current datetime</span>
+      </code>
+    </pre>
+  </div>
+
+  <p>Lấy các thông tin ngày, tháng, năm, giờ, phút giây của dữ liệu date/datetime:</p>
+  <div class="offset-1">
+    <pre>      <code class="language-python hljs">
+<span class="hljs-keyword">from</span> datetime <span class="hljs-keyword">import</span> datetime
+
+dt = datetime.now()
+<span class="hljs-built_in">print</span>(dt.year, dt.month, dt.day, dt.hour, dt.minute, dt.second)
+      </code>
+    </pre>
+  </div>
+
+  <p>Chuyển đổi dữ liệu date/datetime sang string: sử dụng hàm <b>strftime</b>:</p>
+  <div class="offset-1">
+    <pre>      <code class="language-python hljs">
+<span class="hljs-keyword">from</span> datetime <span class="hljs-keyword">import</span> datetime
+
+dt = datetime.now()
+<span class="hljs-built_in">print</span>(dt.strftime(<span class="hljs-string">'%d-%m-%Y'</span>))
+<span class="hljs-built_in">print</span>(dt.strftime(<span class="hljs-string">'%d/%m/%Y %H:%M:%S'</span>))
+      </code>
+    </pre>
+  </div>
+
+  <p>Ý nghĩa của các thành phần trong format ngày tháng:</p>
+  <ul class="offset-1">
+    <li>%d: ngày</li>
+    <li class="mt-1">%m: tháng</li>
+    <li class="mt-1">%Y: năm</li>
+    <li class="mt-1">%H: giờ (0-23)</li>
+    <li class="mt-1">%I: giờ (0-12)</li>
+    <li class="mt-1">%p: buổi (AM/PM)</li>
+    <li class="mt-1">%M: phút</li>
+    <li class="mt-1">%S: giây</li>
+  </ul>
+
+  <p>Chuyển đổi dữ liệu từ string sang date/datetime: sử dụng hàm <b>strptime</b>:</p>
+  <div class="offset-1">
+    <pre>      <code class="language-python hljs">
+<span class="hljs-keyword">from</span> datetime <span class="hljs-keyword">import</span> datetime
+
+d = datetime.strptime(<span class="hljs-string">'01/01/2022'</span>, <span class="hljs-string">'%d/%m/%Y'</span>)
+dt = datetime.strptime(<span class="hljs-string">'01-02-2022 23:59:59'</span>, <span class="hljs-string">'%d-%m-%Y %H:%M:%S'</span>)
+      </code>
+    </pre>
+  </div>
+
+  <h3>Khoảng thời gian (timedelta)</h3>
+  <p>Dữ liệu kiểu khoảng thời gian (timedelta) được dùng để đo sự chênh lệch giữa 2 thời điểm (datetime).</p>
+  <p>Khai báo dữ liệu timedelta:</p>
+
+  <div class="offset-1">
+    <code class="language-python">
+      <div class="my-2 offset-1">from datetime import timedelta</div>
+      <div class="my-2 offset-1">duration = timedelta(days=&lt;days&gt;, seconds=&lt;seconds&gt;)</div>
+    </code>
+  </div>
+
+  <p class="pt-2">Hai thành phần trong timedelta là ngày (<b>days</b>) và giây (<b>seconds</b>)</p>
+  <p>Tính khoảng thời gian giữa 2 thời điểm: sử dụng phép trừ giữa 2 biến <b>datetime</b>:</p>
+  <div class="offset-1">
+    <pre>      <code class="language-python hljs">
+<span class="hljs-keyword">from</span> datetime <span class="hljs-keyword">import</span> datetime
+
+dt1 = datetime(<span class="hljs-number">2022</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>)
+dt2 = datetime.now()
+
+duration = dt2 - dt1
+<span class="hljs-built_in">print</span>(<span class="hljs-string">f'Duration: <span class="hljs-subst">{duration.days}</span> days, <span class="hljs-subst">{duration.seconds}</span> seconds'</span>)
+      </code>
+    </pre>
+  </div>
+
+  <p>Tính thời điểm cách một thời điểm một khoảng thời gian: sử dụng phép cộng giữa biến <b>datetime</b> với biến <b>timedelta</b>:</p>
+  <div class="offset-1">
+    <pre>      <code class="language-python hljs">
+<span class="hljs-keyword">from</span> datetime <span class="hljs-keyword">import</span> datetime, timedelta
+
+now = datetime.now()
+this_time_next_week = now + timedelta(days=<span class="hljs-number">7</span>)
+<span class="hljs-built_in">print</span>(this_time_next_week)
+      </code>
+    </pre>
+  </div>
+</div></body></html>
