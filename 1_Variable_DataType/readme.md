@@ -38,11 +38,19 @@ cities = {"Edmonton", "Toronto", "Regina"}
 
 * Dictionary
 
+https://www.w3schools.com/python/python_dictionaries.asp
+
 student = {
     "name" : "Kien Dinh"
     "country" : "Canada"
     "student_number" : 123456789
 }
+
+Copy Dictionary
+
+my_student = dict(student)
+
+
 
 * Object
 
